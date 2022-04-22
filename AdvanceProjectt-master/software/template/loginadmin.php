@@ -86,11 +86,11 @@ if(isset($_POST['jaw'])) {
                                 <label for="signin-email" class="control-label sr-only">UserName</label>
                                 <input type="text" class="form-control" id="signin-email" name="n" placeholder="username">
                             </div>
-                            <div class="form-group">
+                              <div class="form-group">
                                 <label for="signin-password" class="control-label sr-only">Password</label>
                                 <input type="password" class="form-control" id="signin-password" name="p" placeholder="Password">
                             </div>
-                            <div class="form-group clearfix">
+                            <div class="form-group clearfix">ss
                                 <label class="fancy-checkbox element-left">
 
 
