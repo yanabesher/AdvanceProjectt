@@ -180,6 +180,9 @@ WHERE `Rank`='" . $dd . "' ";
 }
 
 
+
+
+
 if (isset($_POST['rank'])) {
     $n1 = $_POST['rank'];
     $n='Puzzle';

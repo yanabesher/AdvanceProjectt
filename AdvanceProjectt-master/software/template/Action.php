@@ -1,34 +1,5 @@
 
 <?php
-//
-//if (isset($_POST['show'])) {
-//
-//    $db = new mysqli('localhost', 'root', '', 'advance');
-//
-//
-//    $dd1 = $_POST['id1'];
-//    echo '<script>alert($dd1)</script>';
-//
-//    $qryStr = "SELECT * FROM games  ";
-//
-//    $res = $db->query($qryStr);
-//    for ($i = 0; $i < $res->num_rows; $i++) {
-//        $row = $res->fetch_object();
-//        if ($row->Rank == $dd1) {
-//            echo '<script>alert($dd1)</script>';
-//
-//
-//            $db->commit();
-//            $db->close();
-//
-//
-//        }
-//
-//    }
-//
-//
-//}
-
 
 if (isset($_POST['up'])) {
     $db = new mysqli('localhost', 'root', '', 'advance');
