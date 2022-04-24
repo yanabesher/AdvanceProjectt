@@ -68,52 +68,164 @@ if(isset($_POST['jaw'])) {
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
 </head>
+<style>
+    body{
+        /*../template/assets/img/login-bg.jpg*/
+        background-image: url("../template/assets/img/prof.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment:fixed ;
+    }
+    div.div1{
+        left:40px;
+        top:90px;
+        position: absolute;
+        height: 485px;
+        width: 505px;
+        background-color: white;
+        border-radius: 50px;
+    }
+    div.div2{
+        left:40px;
+        top:90px;
+        position: absolute;
+        height: 480px;
+        width: 500px;
+        background-color:pink;
+        opacity: .5;
+        border:4px dashed orangered;
+        border-radius: 50px;
+    }
+    img.img{
+        left:37%;
+        position: absolute;
+        width: 150px;
+        height: 150px;
+    }
+    div.div3{
+        left:40px;
+        top:90px;
+        position: absolute;
+        height: 480px;
+        width: 500px;
+        overflow: hidden;
 
+    }
+    button.submit-btn:hover{
+        box-shadow: 0 0 20px 5px yellow;
+        box-shadow: 0 0 20px 7px orangered;
+    }
+
+    .Button_Box{
+        width: 220px;
+        top: 150px;
+        margin: 35px auto;
+        position: absolute;
+        left:180px;
+        font-size: large;
+        color: orangered;
+
+        /*box-shadow: 0 0 20px 9px #ff61241f;*/
+        /*border-radius: 30px;*/
+
+    }
+    .submit-btn {
+        width: 85%;
+        padding: 10px 30px;
+        cursor: pointer;
+        display: block;
+
+        margin: auto;
+        background: linear-gradient(to right, #ff105f, #ffad06);
+        border: 0;
+        outline: none;
+        border-radius: 30px;
+    }
+
+    span{
+        color: #777;
+        font-size: 15px;
+        bottom: 68px;
+        position: absolute;
+
+    }
+    .span1{
+        color: #d11507;
+        font-size: 17px;
+        bottom: 68px;
+    }
+    .href{
+
+        margin: 400px 400px 300px 400px;
+    }
+
+    #btn{
+        top: 0;
+        left: 0;
+        position: absolute;
+
+        width: 110px;
+        height: 100%;
+        background: linear-gradient(to right, #ff105f, #ffad06);
+        border-radius: 30px;
+        transition: .5s;}
+
+
+    .input-group{
+        top: 270px;
+        position: absolute;
+        width: 280px;
+        transition: .5s;
+        left: 150px;
+    }
+
+    .input-field{
+        width: 100%;
+        padding: 10px 0;
+        margin: 10px 0;
+        border-left: 0;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 1px solid #999;
+        outline:none;
+        background: transparent;
+    }
+    #login{
+
+        left: 50px;}
+
+    #register{
+
+        left: 650px;}
+    *{
+        margin: 0;
+        padding: 0;
+    }
+</style>
 <body>
+
 <!-- WRAPPER -->
-<div id="wrapper">
-    <div class="vertical-align-wrap">
-        <div class="vertical-align-middle">
-            <div class="auth-box ">
-                <div class="left">
-                    <div class="content">
-                        <div class="header">
 
-                            <p class="lead">Login to your account</p>
-                        </div>
-                        <form class="form-auth-small" method="post">
-                            <div class="form-group">
-                                <label for="signin-email" class="control-label sr-only">UserName</label>
-                                <input type="text" class="form-control" id="signin-email" name="n" placeholder="username">
-                            </div>
-                              <div class="form-group">
-                                <label for="signin-password" class="control-label sr-only">Password</label>
-                                <input type="password" class="form-control" id="signin-password" name="p" placeholder="Password">
-                            </div>
-                            <div class="form-group clearfix">ss
-                                <label class="fancy-checkbox element-left">
-
-
-                                </label>
-                            </div>
-                            <button type="submit" name="jaw" class="btn btn-primary btn-lg btn-block">LOGIN</button>
-
-                        </form>
-                    </div>
-                </div>
-                <div class="right">
-                    <div class="overlay"></div>
-                    <div class="content text">
-                        <h1 class="heading"></h1>
-
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
+<div class="div1">
+    <img class="img" src="../template/assets/img/profile.jpg">
 </div>
-<!-- END WRAPPER -->
+<div class="div2">
+</div>
+<div class="div3">
+    <div class="Button_Box">
+        <p class="lead">Login to your account</p>
+
+
+    </div>
+    <form id="login"  class="input-group" method="post">
+        <input type="text" class="input-field" placeholder="User Name" id="signin-email" name="n" required>
+        <input type="password" class="input-field" placeholder="Enter Password" id="signin-password" name="p" required>
+
+        <button type="submit" name="jaw" class="btn btn-primary btn-lg btn-block submit-btn">LogIn</button>
+    </form>
+
+
+    <!-- END WRAPPER -->
 </body>
 
 </html>

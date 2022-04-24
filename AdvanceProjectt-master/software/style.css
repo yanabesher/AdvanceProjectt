@@ -1,0 +1,108 @@
+body {font-family: sans-serif;
+    background-image: linear-gradient( 235deg,  rgb(192,192,192)29.5%, rgba(248,98,63,1) 122.5% );
+    width:calc(100% - 180px);
+    margin:0;
+    padding:0;
+    direction:ltr;
+    webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+a {color:#000;}
+.head {background:#fff;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding:15px;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+}
+.content
+{
+    /*background-image: linear-gradient( 235deg,  rgb(128,128,128) 29.5%, rgba(248,98,63,1) 122.5% );*/
+    border: none;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    /*box-shadow: 0 4px 8px 0 rgba(1, 2, 3, 0.2), 0 0px 100px 0 rgba(0, 0, 0, 0.19);*/
+    /*height: 60%;*/
+    /*width: 40%;*/
+    margin-top: 15%;
+    /*margin-left: 8%;*/
+    position: center;
+
+}
+
+
+
+input
+{
+    -webkit-user-select: auto !important;
+    -khtml-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+    user-select: auto !important;
+}
+
+.content2 {
+    width: 25%;
+    box-shadow: 0 4px 8px 0 rgba(1, 2, 3, 0.2), 0 0px 12px 0 rgba(0, 0, 0, 0.19);
+    background: #fff;
+    margin-top: -100px;
+    position: absolute;
+    display: block;
+    align-items: center;
+    margin-left: 27%;
+
+}
+
+
+.content3 {
+    height:45%;
+    width: 25%;
+    box-shadow: 0 4px 8px 0 rgba(1, 2, 3, 0.2), 0 0px 12px 0 rgba(0, 0, 0, 0.19);
+    background: #fff;
+    margin-top: -120px;
+    position: absolute;
+    display: block;
+    text-align: left;
+    margin-left: 27%;
+
+}
+.max {
+    background: #E5E5E5;
+    padding: 20px;
+    text-align: center;
+    font-size:25px;
+
+
+}
+.txt {
+    font-size: 20pt;
+    color: white;
+    margin-top: 5%;
+
+}
+
+input[type=text][type=password] {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 12px;
+    width: 90%;
+    margin: 5px;
+
+}
+
+input[type="submit"] {
+    background: #d3b172  ;
+    color: white;
+    padding: 13px;
+    width: 92%;
+    margin: 5px;
+    border: 25px solid #4f4a4a;
+    outline: #fff;
+    -webkit-appearance: inherit;
+
+}
