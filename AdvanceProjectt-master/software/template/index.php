@@ -6,6 +6,10 @@
 session_start();
 
 
+
+
+
+
 if(isset($_SESSION['ISmem'])) {
 
 
@@ -214,7 +218,24 @@ if(isset($_SESSION['ISmem'])) {
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="weekly-summary text-right">
-                                    <span class="number">2,315</span> <span class="percentage"><i class="fa fa-caret-up text-success"></i> 12%</span>
+
+                                    <span class="number">                          <?php
+                                            $db = new mysqli('localhost', 'root', '', 'advance');
+                                            $qryStr = "SELECT * FROM cart   ";
+                                            $res = $db->query($qryStr);
+                                            $S = $res->num_rows;
+                                            $sum=0;
+for($i=0;$i<$res->num_rows;$i++) {
+
+    $row = $res->fetch_object();
+$sum=$sum+$row->GamePrice;
+}
+                                            ?>  <span class="number"> <?php echo $sum;
+
+                                            $db->commit();
+
+                                            $db->close();
+                                            ?></span> <span class="percentage"><i class="fa fa-caret-up text-success"></i></span>
                                     <span class="info-label">Total Sales</span>
                                 </div>
                             </div>
@@ -237,14 +258,29 @@ if(isset($_SESSION['ISmem'])) {
                                 <div class="metric">
                                     <span class="icon"><i class="fa fa-eye"></i></span>
                                     <p>
-                                        <span class="number">274,678</span>
-                                        <span class="title">Visits</span>
+             </span>
+                                      <?php  $db = new mysqli('localhost', 'root', '', 'advance');
+                                        $qryStr = "SELECT * FROM member   ";
+                                        $res = $db->query($qryStr);
+                                        $S = $res->num_rows;echo $S;  ?> <span class="title">Users</span>
                                     </p>
                                 </div>
                                 <div class="metric">
                                     <span class="icon"><i class="fa fa-shopping-bag"></i></span>
                                     <p>
-                                        <span class="number">203</span>
+                                        <span class="number">                           <?php
+                                            $db = new mysqli('localhost', 'root', '', 'advance');
+                                            $qryStr = "SELECT * FROM cart   ";
+                                            $res = $db->query($qryStr);
+                                            $S = $res->num_rows;
+
+                                            ?>
+                                        <span class="number"> <?php echo $S ;
+
+                                            $db->commit();
+
+                                            $db->close();
+                                            ?></span>
                                         <span class="title">Sales</span>
                                     </p>
                                 </div>

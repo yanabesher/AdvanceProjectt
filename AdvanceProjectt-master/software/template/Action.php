@@ -9,7 +9,7 @@ if (isset($_POST['up'])) {
 
 
     $d4=$_POST['id4'];
-    $d5=$_POST['id5'];
+
     $d6=$_POST['id6'];
     $d7=$_POST['id7'];
     $d8=$_POST['id8'];
@@ -46,15 +46,7 @@ WHERE `Rank`='" . $dd . "' ";
     }
 
 
-    if(isset($_POST['id5'])){
 
-        $d5=$_POST['id5'];
-        if($d5!=''){
-            $qryStr = "UPDATE `games` SET  `Genre`='$d5'  
-WHERE `Rank`='" . $dd . "' ";
-
-            $rs = $db->query($qryStr);}
-    }
 
 
     if(isset($_POST['id6'])){
@@ -77,7 +69,7 @@ WHERE `Rank`='" . $dd . "' ";
         $d7=$_POST['id7'];
         if($d7!=''){
             $qryStr = "UPDATE `games` SET  `NA_Sales`='$d7'  
-WHERE `Rank`='" . $dd . "' ";
+WHERE `Rank`='" . $dd . "'";
 
             $rs = $db->query($qryStr);}
     }
@@ -89,7 +81,7 @@ WHERE `Rank`='" . $dd . "' ";
         $d8=$_POST['id8'];
         if($d8!=''){
             $qryStr = "UPDATE `games` SET  `EU_Sales`='$d8'  
-WHERE `Rank`='" . $dd . "' ";
+WHERE `Rank`='" . $dd . "'";
 
             $rs = $db->query($qryStr);}
     }
@@ -101,7 +93,7 @@ WHERE `Rank`='" . $dd . "' ";
         $d9=$_POST['id9'];
         if($d9!=''){
             $qryStr = "UPDATE `games` SET  `JP_Sales`='$d9'  
-WHERE `Rank`='" . $dd . "' ";
+WHERE `Rank`='" . $dd . "'";
 
             $rs = $db->query($qryStr);}
     }
@@ -135,6 +127,16 @@ WHERE `Rank`='" . $dd . "' ";
 
 
 
+
+    if(isset($_POST['id5'])){
+
+        $d5=$_POST['id5'];
+        if($d5!=''){
+            $qryStr = "UPDATE `games` SET  `Genre`='$d5'  
+WHERE `Rank`='" . $dd . "' ";
+
+            $rs = $db->query($qryStr);}
+    }
 
 
 
@@ -184,8 +186,10 @@ if (isset($_POST['ad'])  && isset($_POST['id1']) && isset($_POST['id2']) && isse
     $id10 = $_POST['id10'];$id11= $_POST['id11'];
 
 
+
     try {
         $db = new mysqli('localhost', 'root', '', 'advance');
+
 
         $qryStr = " INSERT INTO `games` (`Rank`, `Name`,`Platform` ,`Year`,`Genre`,`Publisher`,`NA_Sales`,
                       `EU_Sales`,`JP_Sales`,`Other_Sales`,`Global_Sales`) VALUES ('" . $id1 . "' ,'".$id2."','" . $id3 . "','" . $id4 . "','" . $id5 . "','" . $id6 . "','" . $id7 . "','" . $id8 . "'
@@ -306,6 +310,11 @@ if (isset($_POST['ad'])  && isset($_POST['id1']) && isset($_POST['id2']) && isse
         border-bottom: 1px solid #999999;
         outline: none;
         background: transparent;}
+    .mm{
+        position: absolute;
+        top: 10px;
+        left:300px;
+    }
 </style>
 <body>
 <!-- WRAPPER -->
@@ -317,10 +326,28 @@ if (isset($_POST['ad'])  && isset($_POST['id1']) && isset($_POST['id2']) && isse
             <div class="navbar-btn">
                 <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
             </div>
-            <form class="navbar-form navbar-left">
+            <form action="Action.php" method="post" class="navbar-form navbar-left">
                 <div class="input-group">
-                    <input type="text" value="" class="form-control" placeholder="Search dashboard...">
-                    <span class="input-group-btn"><button type="button" class="btn btn-primary">Go</button></span>
+
+
+                    <select name="column" class="mm">
+                            <option value="Name">Name</option>
+                            <option value="Rank">Rank</option>
+                            <option value="Year">Year</option>
+                        <option value="Publisher">Publisher</option>
+                            <option value="NA_Sales">NA_Sales</option>
+                            <option value="EU_Sales">EU_Sales</option>
+                            <option value="JP_Sales">JP_Sales</option>
+                            <option value="Global_Sales">Global_Sales</option>
+
+                        </select>
+
+                       <input type="text" value="" class="form-control" name="search" placeholder="Search ...">
+
+
+                        <span class="input-group-btn"><button type="submit" class="btn btn-primary" name="go">Go</button></span>
+
+
                 </div>
             </form>
 
@@ -416,7 +443,7 @@ if (isset($_POST['ad'])  && isset($_POST['id1']) && isset($_POST['id2']) && isse
 
                     <img class="img1"  height="50px" width="50px" src="assets/img/hoom.png"  >
                 </a>
-                <form id="login" class="input-group">
+                <form id="login" class="input-group" action="Action.php" method="post">
                     <input type="text" class="input-field" placeholder="Rank"  name="id1"  required>
                     <input type="text" class="input-field" placeholder="Name"  name="id2" required>
                     <input type="text" class="input-field" placeholder="Platform"  name="id3" required>
@@ -428,6 +455,7 @@ if (isset($_POST['ad'])  && isset($_POST['id1']) && isset($_POST['id2']) && isse
                     <input type="text" class="input-field" placeholder="JP_Sales"  name="id9" required>
                     <input type="text" class="input-field" placeholder="Other_Sales"  name="id10" required>
                     <input type="text" class="input-field" placeholder="Global_Sales"  name="id11" required>
+
 
 
                     <button type="submit" name='ad' class="submit-btn">ADD</button>
@@ -469,42 +497,105 @@ if (isset($_POST['ad'])  && isset($_POST['id1']) && isset($_POST['id2']) && isse
 
                 <?php
 
-                try {
-                    $db = new PDO('mysql:host=localhost;dbname=advance','root','');
-                    $result=$db->query("SELECT * FROM games WHERE `Genre`='Action'  ");
-                    $all=$result->fetchAll();
-                    $col=$all[1];
-                    $columns=array();
 
-                    echo "<pre>";
-                    foreach($col AS $key=>$value)
-                    {
-                        if(is_string($key)){
-                            $columns[]=$key;
+
+
+                    try {
+
+                        @$search = $_POST['search'];
+                        @$column = $_POST['column'];
+
+
+
+                        if (isset($_POST['go'])) {
+
+                            $servername = "localhost";
+                            $username = "root";
+                            $password = "";
+                            $db = "advance";
+
+                            $conn = new mysqli($servername, $username, $password, $db);
+
+?>
+<table border="1px">
+    <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Platform</th>
+        <th>Year</th>
+        <th>Genre</th>
+        <th>Publisher</th>
+        <th>NA_Sales</th>
+        <th>EU_Sales</th>
+        <th>JP_Sales</th>
+        <th>Other_Sales</th>
+        <th>Global_Sales</th>
+
+
+    </tr>
+    <?php
+    $sql = "select * from games where `Genre`='Action' and $column like '%$search%' " ;
+
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0){
+        while($row = $result->fetch_assoc() ){
+            ?>
+
+                <tr> <td><?php echo $row["Rank"]; ?></td>
+                    <td><?php echo $row["Name"]; ?></td>
+                    <td><?php echo $row["Platform"]; ?></td>
+                    <td><?php echo $row["Year"]; ?></td>
+                    <td><?php echo $row["Genre"]; ?></td>
+                    <td><?php echo $row["Publisher"]; ?></td>
+                    <td><?php echo $row["NA_Sales"]; ?></td>
+                    <td><?php echo $row["EU_Sales"]; ?></td>
+                    <td><?php echo $row["JP_Sales"]; ?></td>
+                    <td><?php echo $row["Other_Sales"]; ?></td>
+                    <td><?php echo $row["Global_Sales"]; ?></td>
+
+
+                </tr>
+                <?php
+                }}
+                ?>
+                </table>
+                <?php
+                        } else {  $db = new PDO('mysql:host=localhost;dbname=advance', 'root', '');
+                            $result = $db->query("SELECT * FROM games WHERE `Genre`='Action'  ");
+
+
+                            $all = $result->fetchAll();
+                            $col = $all[1];
+                            $columns = array();
+
+                            echo "<pre>";
+                            foreach ($col as $key => $value) {
+                                if (is_string($key)) {
+                                    $columns[] = $key;
+                                }
+
+                            }
+
+                            echo "<table border='1'>";
+                            foreach ($columns as $value) {
+                                echo "<th>$value</th>";
+                            }
+                            for ($x = 0; $x < count($all); $x++) {
+                                echo "<tr>";
+                                for ($y = 0; $y < count($columns); $y++) {
+
+                                    echo "<td style='cursor: pointer'>" . $all[$x][$y] . "</td>";
+
+                                }
+                                echo "</tr>";
+                            }
                         }
 
-                    }
-
-                    echo "<table border='1'>";
-                    foreach($columns AS $value){
-                        echo "<th>$value</th>";
-                    }
-                    for($x=0;$x<count($all);$x++)
-                    {
-                        echo "<tr>";
-                        for($y=0;$y<count($columns);$y++){
-
-                            echo "<td style='cursor: pointer'>".$all[$x][$y]."</td>";
+                        }
+                    catch
+                        (Exception $e) {
 
                         }
-                        echo "</tr>";
-                    }
-
-
-                }catch(Exception $e){
-
-                }
-
 
 
 

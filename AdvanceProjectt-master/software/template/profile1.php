@@ -8,47 +8,169 @@
 
 
 
-
-
             try {
 
                 $dataPoints = array();
+
                 $db = new mysqli('localhost', 'root', '', 'advance');
-                $qryStr = "SELECT * FROM loginadmin WHERE `place`='tulkarem'  ";
+                $qryStr = "SELECT * FROM games WHERE `Year`='2004'  ";
                 $res = $db->query($qryStr);
-                $S=$res->num_rows;
-                $dataPoints[] = array("label" => "tulkarem", "y" => $S);
-                $qryStr = "SELECT * FROM loginadmin WHERE `place`='Anabta'  ";
-                $res1 = $db->query($qryStr);
-                $dataPoints[] = array("label" => "Anabta", "y" => $S);
-                $Sh=$res1->num_rows;
+
+                $sum=0;
+                for($i=0;$i<$res->num_rows;$i++) {
+
+                    $row = $res->fetch_object();
+                    $sum=$sum+$row->NA_Sales;
+                }
+                $PU=$sum/$res->num_rows;
+                $dataPoints[] = array("label" => "2004", "y" => $PU);
+
+                $qryStr = "SELECT * FROM games WHERE `Year`='2005'  ";
+                $res = $db->query($qryStr);
+                $sum=0;
+                for($i=0;$i<$res->num_rows;$i++) {
+
+                    $row = $res->fetch_object();
+                    $sum=$sum+$row->NA_Sales;
+                }
+                $RAC=$sum/$res->num_rows;
+                $dataPoints[] = array("label" => "2005", "y" => $RAC);
+                $qryStr = "SELECT * FROM games WHERE `Year`='2006'  ";
+                $res = $db->query($qryStr);
+                $sum=0;
+                for($i=0;$i<$res->num_rows;$i++) {
+
+                    $row = $res->fetch_object();
+                    $sum=$sum+$row->NA_Sales;
+                }
+                $FI=$sum/$res->num_rows;
+                $dataPoints[] = array("label" => "2006", "y" => $FI);
+                $qryStr = "SELECT * FROM games WHERE `Year`='2007'  ";
+                $res = $db->query($qryStr);
+                $sum=0;
+                for($i=0;$i<$res->num_rows;$i++) {
+
+                    $row = $res->fetch_object();
+                    $sum=$sum+$row->NA_Sales;
+                }
+                $STR=$sum/$res->num_rows;
+                $dataPoints[] = array("label" => "2007", "y" => $STR);
+                $qryStr = "SELECT * FROM games WHERE `Year`='2008'  ";
+                $res = $db->query($qryStr);
+                $sum=0;
+                for($i=0;$i<$res->num_rows;$i++) {
+
+                    $row = $res->fetch_object();
+                    $sum=$sum+$row->NA_Sales;
+                }
+                $STR=$sum/$res->num_rows;
+                $dataPoints[] = array("label" => "2008", "y" => $STR);
+                $qryStr = "SELECT * FROM games WHERE `Year`='2009'  ";
+                $res = $db->query($qryStr);
+
+                $sum=0;
+                for($i=0;$i<$res->num_rows;$i++) {
+
+                    $row = $res->fetch_object();
+                    $sum=$sum+$row->NA_Sales;
+                }
+                $PU=$sum/$res->num_rows;
+                $dataPoints[] = array("label" => "2009", "y" => $PU);
+                $qryStr = "SELECT * FROM games WHERE `Year`='2010'  ";
+                $res = $db->query($qryStr);
+                $sum=0;
+                for($i=0;$i<$res->num_rows;$i++) {
+
+                    $row = $res->fetch_object();
+                    $sum=$sum+$row->NA_Sales;
+                }
+                $STR=$sum/$res->num_rows;
+                $dataPoints[] = array("label" => "2010", "y" => $STR);
+                $qryStr = "SELECT * FROM games WHERE `Year`='2011'  ";
+                $res = $db->query($qryStr);
+                $sum=0;
+                for($i=0;$i<$res->num_rows;$i++) {
+
+                    $row = $res->fetch_object();
+                    $sum=$sum+$row->NA_Sales;
+                }
+                $STR=$sum/$res->num_rows;
+                $dataPoints[] = array("label" => "2011", "y" => $STR);
+
+                $qryStr = "SELECT * FROM games WHERE `Year`='2012'  ";
+                $res = $db->query($qryStr);
+                $sum=0;
+                for($i=0;$i<$res->num_rows;$i++) {
+
+                    $row = $res->fetch_object();
+                    $sum=$sum+$row->NA_Sales;
+                }
+                $STR=$sum/$res->num_rows;
+                $dataPoints[] = array("label" => "2012", "y" => $STR);
+                $qryStr = "SELECT * FROM games WHERE `Year`='2013'  ";
+                $res = $db->query($qryStr);
+                $sum=0;
+                for($i=0;$i<$res->num_rows;$i++) {
+
+                    $row = $res->fetch_object();
+                    $sum=$sum+$row->NA_Sales;
+                }
+                $STR=$sum/$res->num_rows;
+                $dataPoints[] = array("label" => "2013", "y" => $STR);
+                $qryStr = "SELECT * FROM games WHERE `Year`='2014'  ";
+                $res = $db->query($qryStr);
+                $sum=0;
+                for($i=0;$i<$res->num_rows;$i++) {
+
+                    $row = $res->fetch_object();
+                    $sum=$sum+$row->NA_Sales;
+                }
+                $STR=$sum/$res->num_rows;
+                $dataPoints[] = array("label" => "2014", "y" => $STR);
+                $qryStr = "SELECT * FROM games WHERE `Year`='2015'  ";
+                $res = $db->query($qryStr);
+                $sum=0;
+                for($i=0;$i<$res->num_rows;$i++) {
+
+                    $row = $res->fetch_object();
+                    $sum=$sum+$row->NA_Sales;
+                }
+                $STR=$sum/$res->num_rows;
+                $dataPoints[] = array("label" => "2015", "y" => $STR);
 
                 $db->commit();
                 $db->close();
-            }catch(Exception $e){
+            } catch (Exception $e) {
 
             }
 
 
 
 
+
+
+
             ?>
 
-            theme: "light2",
-            animationEnabled: true,
-            title: {
-                text: ""
-            },
-            data: [{
-                type: "doughnut",
-                indexLabel: "{symbol} - {y}",
-                yValueFormatString: "#,##0.0\"%\"",
-                showInLegend: true,
-                legendText: "{label} : {y}",
-                dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-            }]
-        });
-        chart.render();
+
+                animationEnabled: true,
+                exportEnabled: true,
+                theme: "light1", // "light1", "light2", "dark1", "dark2"
+                title:{
+                    text: "NA_Sales"
+                },
+                axisY:{
+                    includeZero: true
+                },
+                data: [{
+                    type: "column", //change type to bar, line, area, pie, etc
+                    //indexLabel: "{y}", //Shows y value on all Data Points
+                    indexLabelFontColor: "#5A5757",
+                    indexLabelPlacement: "outside",
+                    dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+                }]
+            });
+            chart.render();
     }
 </script>
 <?php
@@ -57,9 +179,9 @@ session_start();
 
 if (isset($_POST['up'])) {
 
-    if(is_uploaded_file($_FILES["image1"]["tmp_name"]) ) {
+    if(is_uploaded_file($_FILES['image1']['tmp_name']) ) {
 
-        $file = addslashes(file_get_contents($_FILES["image1"]["tmp_name"]));
+        $file = addslashes(file_get_contents($_FILES['image1']['tmp_name']));
         try {
             $db = new mysqli('localhost', 'root', '', 'advance');
             $qryStr ="UPDATE `loginadmin` SET  `image`= '$file' WHERE `name`='" . $_SESSION['u'] . "' ";

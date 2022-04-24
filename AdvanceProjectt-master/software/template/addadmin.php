@@ -136,6 +136,11 @@ font-size: x-large;
         outline: none;
         border-radius: 30px;
     }
+    .mm{
+        position: absolute;
+        top: 10px;
+        left:300px;
+    }
 </style>
 <body>
 <!-- WRAPPER -->
@@ -147,10 +152,21 @@ font-size: x-large;
             <div class="navbar-btn">
                 <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
             </div>
+
             <form class="navbar-form navbar-left">
                 <div class="input-group">
-                    <input type="text" value="" class="form-control" placeholder="Search dashboard...">
-                    <span class="input-group-btn"><button type="button" class="btn btn-primary">Go</button></span>
+
+                    <form action="test4.php" method="post">
+
+
+                        </select>
+
+                        <input type="text" value="" class="form-control" name="search" placeholder="Search ...">
+
+
+                        <span class="input-group-btn"><button type="submit" class="btn btn-primary">Go</button></span>
+                    </form>
+
                 </div>
             </form>
 
