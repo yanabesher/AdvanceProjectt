@@ -221,7 +221,7 @@ if(isset($_SESSION['ISmem'])) {
 
                                     <span class="number">                          <?php
                                             $db = new mysqli('localhost', 'root', '', 'advance');
-                                            $qryStr = "SELECT * FROM cart   ";
+                                            $qryStr = "SELECT * FROM orders   ";
                                             $res = $db->query($qryStr);
                                             $S = $res->num_rows;
                                             $sum=0;
@@ -270,7 +270,7 @@ $sum=$sum+$row->GamePrice;
                                     <p>
                                         <span class="number">                           <?php
                                             $db = new mysqli('localhost', 'root', '', 'advance');
-                                            $qryStr = "SELECT * FROM cart   ";
+                                            $qryStr = "SELECT * FROM orders   ";
                                             $res = $db->query($qryStr);
                                             $S = $res->num_rows;
 
