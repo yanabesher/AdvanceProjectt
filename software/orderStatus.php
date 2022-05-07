@@ -117,13 +117,13 @@ Author URL: http://w3layouts.com
                             <nav>
                                 <ul class="nav navbar-nav">
                                     <li class="active"><a href="orderStatus.php" class="Button" >Order Status</a></li>
-                                    <li><a href="home%20page.php">Home</a></li>
-                                    <li><a href="login%20page.php" class="Button" >Log out</a></li>
+                                    <li><a href="Cart page.php" class="Button" >Cart</a></li>
+                                    <li><a href="home page.php">Home</a></li>
+                                    <li><a href="login page.php" class="Button" >Log out</a></li>
                                     <li><a href="Games.php">Games</a></li>
-                                    <!--<li><a href="#" class="Button" >Order Status</a></li>-->
+                                    <!--<li><a href="orderStatus.html" class="Button" >Order Status</a></li>-->
                                     <!-- بتبين بس لما نعمل ساين ان ، والساين ان بتختفي 	-->
-                                    <li><a href="Cart%20page.php" >Cart</a></li>
-
+                                    <li><a href="wishlist page.php" >Wishlist</a></li>
                                 </ul>
                             </nav>
                         </div>

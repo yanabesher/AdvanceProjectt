@@ -23,9 +23,6 @@ if(isset($_POST['move'])){
 
 
 
-
-
-
 <!--A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -104,7 +101,7 @@ Author URL: http://w3layouts.com
 										<!--<li><a href="orderStatus.html" class="Button" >Order Status</a></li>-->
 										<!-- بتبين بس لما نعمل ساين ان ، والساين ان بتختفي 	-->
 										<li><a href="Cart%20page.php" >Cart</a></li>
-                                        <li class="active"><a href="orderStatus.php" class="Button" >Order Status</a></li>
+                                        <li><a href="orderStatus.php" class="Button" >Order Status</a></li>
 
 									</ul>
 								</nav>
@@ -140,7 +137,15 @@ Author URL: http://w3layouts.com
                         $rank=$row['Rank'];
                          $page="Cart";
                         $action="wishlist%20page.php";
-                        Elements($row['GameName'],$row['GamePrice'],$rank,$page,$action);
+                        $productimg="images_game/".$row['GameName'].".jpg";
+                    if(file_exists($productimg)){
+                        Elements($row['GameName'],$row['GamePrice'],$rank,$page,$action,$productimg);
+                    }
+                    else{
+                        $productimg="images_game/icon.png";
+                        Elements($row['GameName'],$row['GamePrice'],$rank,$page,$action,$productimg);
+
+                    }
                     }
                     ?>
 

@@ -73,7 +73,7 @@ if(isset($_POST['Checkout'])){
             $gamePrice=$row['GamePrice'];
             $rank=$row['Rank'];
             $qry="INSERT INTO orders values ('".$email."','".$gameName."','".$gamePrice."','".$rank."','".$date."')";
-            $res=$dp->query($qry);
+            $res2=$dp->query($qry);
         }
         $qry="delete from wishlist where Email='$email' and Category='cart' ";
         $res=$dp->query($qry);
@@ -323,7 +323,15 @@ Author URL: http://w3layouts.com
                         $rank=$row['Rank'];
                         $page="wishlist";
                         $action="Cart%20page.php";
-                        Elements($row['GameName'],$row['GamePrice'],$rank,$page,$action);
+                        $productimg="images_game/".$row['GameName'].".jpg";
+                        if(file_exists($productimg)){
+                            Elements($row['GameName'],$row['GamePrice'],$rank,$page,$action,$productimg);
+                        }
+                        else{
+                            $productimg="images_game/icon.png";
+                            Elements($row['GameName'],$row['GamePrice'],$rank,$page,$action,$productimg);
+
+                        }
                     }
                     ?>
 
