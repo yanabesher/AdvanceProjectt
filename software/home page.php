@@ -154,10 +154,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                     <option value="Year">Year</option>
                                                     <option value="Genre">Genre</option>
                                                     <option value="Publisher">Publisher</option>
-                                                    <option value="NA_Sales">NA_Sales</option>
-                                                    <option value="EU_Sales">EU_Sales</option>
-                                                    <option value="JP_Sales">JP_Sales</option>
-                                                    <option value="Global_Sales">Global_Sales</option>
+                                                    <option value="NA_Sales">Price</option>
+
 
                                                 </select>
                                             </form>

@@ -236,10 +236,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                     <option value="Year">Year</option>
                                                     <option value="Genre">Genre</option>
                                                     <option value="Publisher">Publisher</option>
-                                                    <option value="NA_Sales">NA_Sales</option>
-                                                    <option value="EU_Sales">EU_Sales</option>
-                                                    <option value="JP_Sales">JP_Sales</option>
-                                                    <option value="Global_Sales">Global_Sales</option>
+                                                    <option value="NA_Sales">Price</option>
 
                                                 </select>
                                             </form>
@@ -315,7 +312,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 if($column == "Rank")
                     $sql = "select * from games where Rank = $search  " ;
-
+                else if($column == "NA_Sales")
+                  $sql = "select * from games where NA_Sales > ($search-10) and NA_Sales < ($search+10)  " ;
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0){
                     while($row = $result->fetch_assoc() ){
