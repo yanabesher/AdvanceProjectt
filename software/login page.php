@@ -211,6 +211,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<ul class="nav navbar-nav">
 										<li class="active"><a href="login page.php" class="Button" >Sign in / Sign up</a></li>
 										<li><a href="home%20page.php">Home</a></li>
+                                        <li><a href="template/loginadmin.php">Admin</a></li>
+
 <!--										<li><a href="Games.php">Games</a></li>-->
 <!--										<!--<li><a href="orderStatus.html" class="Button" >Order Status</a></li>-->-->
 <!--										<!-- بتبين بس لما نعمل ساين ان ، والساين ان بتختفي 	-->-->
@@ -250,7 +252,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 														<div class="form-content">
 															<div class="login-form">
 																<div class="title">Login</div>
-																<form action="login page.php" method="post">
+<!--																<form action="login page.php" method="post">-->
+                                                                    <form action ="login%20page.php" method="post">
 																	<div class="input-boxes">
 																		<div class="input-box">
 																			<i class="fas fa-envelope"></i>
@@ -260,7 +263,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 																			<i class="fas fa-lock"></i>
 																			<input type="password" placeholder="Enter your password" name="passLog" required>
 																		</div>
-																		<div class="text"><a href="#">Forgot password?</a></div>
                                                                         <?php
                                                                         if (isset($_POST['LoginSubmit'])){
                                                                             if(isset($_SESSION['ismember'])) {
@@ -272,7 +274,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                                         ?>
 
 																		<div class="button input-box">
+                                                                            <input type="hidden" name="crud_req" value="login">
 																			<input type="submit" name="LoginSubmit" value="Submit">
+<!--                                                                            <button type="submit" name="submit">Login</button>-->
+
 																		</div>
 																		<div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
 																	</div>

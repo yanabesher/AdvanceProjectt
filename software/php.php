@@ -1,6 +1,6 @@
 <?php
 
-function Elements($gameName,$Gameprice,$Rank,$page,$action)
+function Elements($gameName,$Gameprice,$Rank,$page,$action ,$productimg)
 {
     @$dp = new mysqli('localhost', 'root', '', 'advance');
     $qry="SELECT Platform,Year,Genre,Publisher FROM games where Rank='$Rank'";
@@ -16,7 +16,7 @@ function Elements($gameName,$Gameprice,$Rank,$page,$action)
         <div class=\"product_wrap\">
 						<div class=\"product_info\">
 							<div class=\"product_img\">
-								<img src=\"images/img.png\" alt=\"ProductImage\" width=\"200px\" height=\"200px\">
+								<img src=\"$productimg\" alt=\"ProductImage\" width=\"200px\" height=\"200px\">
 							</div>
 							<div class=\"product_data\">
 								<div class=\"description\">

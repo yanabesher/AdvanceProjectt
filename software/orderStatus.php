@@ -117,13 +117,13 @@ Author URL: http://w3layouts.com
                             <nav>
                                 <ul class="nav navbar-nav">
                                     <li class="active"><a href="orderStatus.php" class="Button" >Order Status</a></li>
-                                    <li><a href="home%20page.php">Home</a></li>
-                                    <li><a href="login%20page.php" class="Button" >Log out</a></li>
+                                    <li><a href="Cart page.php" class="Button" >Cart</a></li>
+                                    <li><a href="home page.php">Home</a></li>
+                                    <li><a href="login page.php" class="Button" >Log out</a></li>
                                     <li><a href="Games.php">Games</a></li>
-                                    <!--<li><a href="#" class="Button" >Order Status</a></li>-->
+                                    <!--<li><a href="orderStatus.html" class="Button" >Order Status</a></li>-->
                                     <!-- بتبين بس لما نعمل ساين ان ، والساين ان بتختفي 	-->
-                                    <li><a href="Cart%20page.php" >Cart</a></li>
-
+                                    <li><a href="wishlist page.php" >Wishlist</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -139,28 +139,28 @@ Author URL: http://w3layouts.com
             <table id="racetimes">
                 <tr id="firstrow"><th>Game Name </th><th>Price</th><th>Date of order</th><th>Is it Received</th></tr>
                 <?php
-                   @$dp=new mysqli('localhost','root','','advance');
-                   $email=$_SESSION['E'];
-                    $qry="select * from orders where  Email='$email' ";
-                    $res=$dp->query($qry);
+                @$dp=new mysqli('localhost','root','','advance');
+                $email=$_SESSION['E'];
+                $qry="select * from orders where  Email='$email' ";
+                $res=$dp->query($qry);
 
-                    for ($i=0;$i <$res->num_rows;$i++)
-                    { $row= $res->fetch_array();
-                        $gameName=$row['GameName'];
-                        $gamePrice=$row['GamePrice'];
-                        $date=$row['date'];
-                        echo "<tr><td> $gameName </td><td> $gamePrice </td><td> $date</td><td> -- </td></tr>";
-                    }
+                for ($i=0;$i <$res->num_rows;$i++)
+                { $row= $res->fetch_array();
+                    $gameName=$row['GameName'];
+                    $gamePrice=$row['GamePrice'];
+                    $date=$row['date'];
+                    echo "<tr><td> $gameName </td><td> $gamePrice </td><td> $date</td><td> -- </td></tr>";
+                }
 
 
                 ?>
-<!--                <tr><td> HJKK </td><td> 10 </td><td> 15-3-2022</td><td> -- </td></tr>-->
-<!--                <tr><td>   </td><td>   </td><td>   </td><td>  </td></tr>-->
-<!--                <tr><td>   </td><td>   </td><td>  </td><td>  </td></tr>-->
-<!--                <tr><td>   </td><td>    </td><td>   </td><td>  </td></tr>-->
-<!--                <tr><td>   </td><td>   </td><td>  </td><td>  </td></tr>-->
-<!--                <tr><td>   </td><td>   </td><td>   </td><td>   </td></tr>-->
-<!--                <tr><td>  </td><td>   </td><td>    </td><td>    </td></tr>-->
+                <!--                <tr><td> HJKK </td><td> 10 </td><td> 15-3-2022</td><td> -- </td></tr>-->
+                <!--                <tr><td>   </td><td>   </td><td>   </td><td>  </td></tr>-->
+                <!--                <tr><td>   </td><td>   </td><td>  </td><td>  </td></tr>-->
+                <!--                <tr><td>   </td><td>    </td><td>   </td><td>  </td></tr>-->
+                <!--                <tr><td>   </td><td>   </td><td>  </td><td>  </td></tr>-->
+                <!--                <tr><td>   </td><td>   </td><td>   </td><td>   </td></tr>-->
+                <!--                <tr><td>  </td><td>   </td><td>    </td><td>    </td></tr>-->
             </table>
 
 
